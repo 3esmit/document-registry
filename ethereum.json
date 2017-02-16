@@ -1,14 +1,7 @@
 {
   "contracts": "contracts",
   
-  "deploy": ["TradingCardGame"],
-  
-  "plugins": {
-    "oraclize": {
-      "networkID": 161,
-      "loadRealData": true
-    }
-  },
+  "deploy": ["DocumentRegistry"],
   
   "env": {
     "block": {
