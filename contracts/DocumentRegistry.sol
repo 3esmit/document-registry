@@ -12,10 +12,12 @@ Written by Ricardo Guilherme Schmidt <3esmit@gmail.com>
 */
 
 contract DocumentRegistry {
-
-    event DocumentRegister(address _owner, bytes32 _hash, uint _time);
-    event Transfer(bytes32 _hash, address _newOwner);
-    event Donate(bytes32 _hash, address _donator, uint _value);
+    
+    event DocumentRegister(address owner, bytes32 hash, uint time);
+    event AttributeChange(bytes32 hash, string name, string data, uint time);
+    event AttributeDrop(bytes32 hash, string name);
+    event Transfer(bytes32 hash, address newOwner);
+    event Donate(bytes32 hash, address donator, uint value);
 
     struct Document{
         address owner;
@@ -53,13 +55,14 @@ contract DocumentRegistry {
     }
 
     function setData( bytes32 _hash, string _name, string _data)  only_owner(_hash){
-        if(documents[_hash].data[_name].updated == 0){
+        if(documents[_hash].data[_name].updated == 0)
+        {
             documents[_hash].data[_name].attributes_pos = documents[_hash].attributes.length;
             documents[_hash].attributes.push(_name);
         }
         documents[_hash].data[_name].value = _data;
         documents[_hash].data[_name].updated = now;
-        
+        AttributeChange(_hash,_name,_data,now);
     }
     
     function clearData(bytes32 _hash, string _name) only_owner(_hash){
@@ -68,6 +71,7 @@ contract DocumentRegistry {
         delete documents[_hash].attributes[documents[_hash].attributes.length-1];
         documents[_hash].attributes.length--;
         delete documents[_hash].data[_name];
+        AttributeDrop(_hash,_name);
     }
 
     function transfer(bytes32 _hash, address _newOwner) only_owner(_hash){
@@ -109,5 +113,6 @@ contract DocumentRegistry {
         owned[_owner].push(_hash);
         documents[_hash].owned_pos = owned[_owner].length-1;
     }
+    
     
 }

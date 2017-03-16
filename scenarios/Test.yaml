@@ -1,0 +1,62 @@
+# 
+# Scenario2 
+# 
+# Created on: 17/02/2017 09:37:17 
+# 
+
+# Call method register(bytes32)
+- from: '0xdedb49385ad5b94a16f236a6890cf9e0b1e30392'
+  to: '0x17956ba5f4291844bc25aedb27e69bc11b5bda39'
+  value: '0x0'
+  call: register(bytes32)
+  args:
+    - '0x74ec2f21b98fb7e0f8ab9628ba6f42e917b4a514afc35de7763d6ac4590f441e'
+
+# Call method setData(bytes32,string,string)
+- from: '0xdedb49385ad5b94a16f236a6890cf9e0b1e30392'
+  to: '0x17956ba5f4291844bc25aedb27e69bc11b5bda39'
+  value: '0x0'
+  call: 'setData(bytes32,string,string)'
+  args:
+    - '0x74ec2f21b98fb7e0f8ab9628ba6f42e917b4a514afc35de7763d6ac4590f441e'
+    - hash
+    - sha256
+
+# Call method setData(bytes32,string,string)
+- from: '0xdedb49385ad5b94a16f236a6890cf9e0b1e30392'
+  to: '0x17956ba5f4291844bc25aedb27e69bc11b5bda39'
+  value: '0x0'
+  call: 'setData(bytes32,string,string)'
+  args:
+    - '0x74ec2f21b98fb7e0f8ab9628ba6f42e917b4a514afc35de7763d6ac4590f441e'
+    - desc
+    - my name
+
+# Call method setData(bytes32,string,string)
+- from: '0xdedb49385ad5b94a16f236a6890cf9e0b1e30392'
+  to: '0x17956ba5f4291844bc25aedb27e69bc11b5bda39'
+  value: '0x0'
+  call: 'setData(bytes32,string,string)'
+  args:
+    - '0x74ec2f21b98fb7e0f8ab9628ba6f42e917b4a514afc35de7763d6ac4590f441e'
+    - url
+    - 'https://github.com/3esmit/'
+
+# Call method setData(bytes32,string,string)
+- from: '0xdedb49385ad5b94a16f236a6890cf9e0b1e30392'
+  to: '0x17956ba5f4291844bc25aedb27e69bc11b5bda39'
+  value: '0x0'
+  call: 'setData(bytes32,string,string)'
+  args:
+    - '0x74ec2f21b98fb7e0f8ab9628ba6f42e917b4a514afc35de7763d6ac4590f441e'
+    - secret
+    - Ricardo Guilherme Schmidt
+
+# Call method clearData(bytes32,string)
+- from: '0xdedb49385ad5b94a16f236a6890cf9e0b1e30392'
+  to: '0x17956ba5f4291844bc25aedb27e69bc11b5bda39'
+  value: '0x0'
+  call: 'clearData(bytes32,string)'
+  args:
+    - '0x74ec2f21b98fb7e0f8ab9628ba6f42e917b4a514afc35de7763d6ac4590f441e'
+    - secret

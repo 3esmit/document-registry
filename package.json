@@ -1,0 +1,25 @@
+{
+  "name": "document-registry",
+  "version": "1.0.0",
+  "description": "Register Documents to Ethereum Blockchain",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3esmit/document-registry.git"
+  },
+  "keywords": [
+    "ethereum"
+  ],
+  "author": "Ricardo Guilherme Schmidt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/3esmit/document-registry/issues"
+  },
+  "homepage": "https://github.com/3esmit/document-registry#readme",
+  "dependencies": {
+    "web3": "^0.18.2"
+  }
+}
